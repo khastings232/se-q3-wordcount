@@ -1,4 +1,4 @@
-<img height="100px" src="https://wordcounter.net/images/word-counter.jpg">
+<img height="120px" src="img/wordcounter.jpg" />
 
 # Wordcount
 
