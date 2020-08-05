@@ -75,6 +75,12 @@ class TestWordcount(unittest.TestCase):
         d = self.module.create_word_dict(filename)
         self.assertEqual(len(d), 11724)
 
+    def test_taletwocities(self):
+        """Check if TaleTwoCities book can be counted"""
+        filename = "books/good/TaleTwoCities.txt"
+        d = self.module.create_word_dict(filename)
+        self.assertEqual(len(d), 18620)
+
     def test_flake8(self):
         """Checking for PEP8/flake8 compliance"""
         result = subprocess.run(['flake8', self.module.__file__])
