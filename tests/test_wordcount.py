@@ -8,6 +8,7 @@ Students should not modify this file.
 import sys
 import unittest
 import importlib
+import subprocess
 from contextlib import redirect_stdout
 from io import StringIO
 
@@ -15,8 +16,10 @@ from io import StringIO
 PKG_NAME = 'wordcount'
 
 small_dict = {
-    '--': 1, 'are': 3, 'at': 1, 'be': 3, 'but': 1, 'coach': 1, 'football': 1, 'least': 1,
-    'need': 1, 'not': 3, 'should': 1, 'to': 2, 'used': 1, 'we': 6, 'what': 3
+    '--': 1, 'are': 3, 'at': 1, 'be': 3,
+    'but': 1, 'coach': 1, 'football': 1,
+    'least': 1, 'need': 1, 'not': 3, 'should': 1,
+    'to': 2, 'used': 1, 'we': 6, 'what': 3
     }
 
 alice_top_20 = [
@@ -71,6 +74,11 @@ class TestWordcount(unittest.TestCase):
         filename = "books/good/Frankenstein.txt"
         d = self.module.create_word_dict(filename)
         self.assertEqual(len(d), 11724)
+
+    def test_flake8(self):
+        """Checking for PEP8/flake8 compliance"""
+        result = subprocess.run(['flake8', self.module.__file__])
+        self.assertEqual(result.returncode, 0)
 
 
 if __name__ == "__main__":

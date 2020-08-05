@@ -64,16 +64,18 @@ Print the above list in order, sorted alphabetically by word (Python will sort p
 ## Part B
 For the `--topcount` flag, implement a `print_top()` function similar to `print_words()`, but which prints just the top 20 most common words sorted so the **most common** word is first, then the next most common, and so on.
 
+## Testing with Unittest
+This assignment also has separate unit tests to help you during development. The unit tests are located in the `tests` folder; you should not modify these.  Make sure all unit tests are passing before you submit your solution. You can invoke the unit tests from the command line at the root of your project folder:
+```console
+$ python -m unittest discover tests
+```
+You can also run these same tests using the `Test Explorer` extension built in to the VSCode editor, by enabling automatic test discovery.  This is a really useful tool and we highly recommend to learn it.
 
-# Debugging
-Use your VS Code IDE to set up a debug session and single-step your `wordcount.py` &mdash; Create two launch.json debug configurations: One with optional `--count` argument and one with `--topcount` argument.
+https://code.visualstudio.com/docs/python/testing#_test-discovery
 
+- Test framework is `unittest`
+- Test folder pattern is `tests`
+- Test name pattern is `test*`
 
-## PR (Pull Request) Workflow for this assignment
-1. *Fork* this repository into your own personal GitHub account.
-2. *Clone* your own repo to your local development machine.
-3. Create a separate branch named `dev` and checkout the branch.
-5. Commit your changes, then `git push` the branch back to your own GitHub account.
-5. From your own GitHub repo, create a pull request (PR) *from your `dev` branch back to **your own** master*.
-6. Copy/Paste the URL **link to your PR** as your assignment submission.
-7. Your grader will post code review comments inline within your pull request in your GitHub account. Be sure to respond to any comments and make requested changes. **RESUBMIT** a new link to your PR after making changes. This is the code review iteration cycle.
+## Submitting your work
+To submit your solution for grading, you will need to create a github [Pull Request (PR)](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests).  Refer to the `PR Workflow` article in your course content for details.
